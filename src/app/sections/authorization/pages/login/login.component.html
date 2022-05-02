@@ -1,0 +1,19 @@
+<div class="container login">
+    <form [formGroup]="form" (submit)="submit()" class="login-form">
+        <div class="form-title">
+            <h2>Login</h2>
+        </div>
+        <div class="form-group">
+            <input formControlName="email" type="text" placeholder="email/username">
+        </div>
+        <div class="form-group">
+            <input formControlName="password" type="password" placeholder="password">
+        </div>
+        <div class="form-redirect">
+            <a routerLink="/auth/signup" routerLinkActive="active">Don't have an account? Register</a>
+        </div>
+        <div class="form-bottom">
+            <button type="submit()" class="login-btn">Login</button>
+        </div>
+    </form>
+</div>

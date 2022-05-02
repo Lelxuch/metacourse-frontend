@@ -1,0 +1,17 @@
+.empty-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5rem;
+}
+
+.empty-logo {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  width: 200px;
+  text-align: center;
+}

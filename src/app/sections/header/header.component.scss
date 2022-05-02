@@ -1,0 +1,86 @@
+@import '../../../scss/_variables.scss';
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: #fff;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 80px;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.nav-btn {
+  margin-right: 80px;
+  background: #ffffff;
+  border: none;
+  font-size: 1rem;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.dropdown {
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+
+.dropdown-btn {
+  background-color: $primary;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  border-radius: $border-radius;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-link {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+}

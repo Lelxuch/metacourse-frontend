@@ -1,0 +1,37 @@
+<header>
+    <div class="container header-inner">
+        <div class="header-brand">
+            <a routerLink="/" routerLinkActive="active">
+                <h3>Metacourse</h3>
+            </a>
+        </div>
+        <nav>
+
+            <a *ngIf="this.isLogged()" routerLink="catalog" routerLinkActive="active" class="nav-link">
+                Catalog
+            </a>
+
+            <a *ngIf="this.isLogged()" routerLink="education" routerLinkActive="active" class="nav-link">
+                My education
+            </a>
+
+            <a *ngIf="this.isLogged()" routerLink="creation" routerLinkActive="active" class="nav-link">
+                Course creation
+            </a>
+
+            <a *ngIf="!this.isLogged()" routerLink="auth/login" routerLinkActive="active" class="nav-link">
+                Login
+            </a>
+
+            <div class="dropdown">
+                <button *ngIf="isLogged()" class="dropdown-btn">
+                    SN
+                </button>
+                <div class="dropdown-content">
+                    <a routerLink="/profile" class="dropdown-link">Profile</a>
+                    <a (click)="logout()" class="dropdown-link red-link">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

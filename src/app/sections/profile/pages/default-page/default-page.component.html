@@ -1,0 +1,104 @@
+<div class="container-mini">
+    <div class="profile-inner">
+        <div class="profile-header">
+            <div class="profile-left">
+                <h1>Profile</h1>
+                <button (click)="this.modalFlag = !this.modalFlag" class="profile-edit-btn">
+                    Edit
+                </button>
+            </div>
+            <div class="profile-photo">
+                SN
+            </div>
+        </div>
+        <div class="profile-content">
+            <div class="profile-item">
+                <div class="item-left">
+                    Full Name
+                </div>
+                <div class="item-right">
+                    {{ userInfo.name }} {{userInfo.surname}}
+                </div>
+            </div>
+            <div class="profile-item">
+                <div class="item-left">
+                    Email
+                </div>
+                <div class="item-right">
+                    {{ userInfo.email }}
+                </div>
+            </div>
+            <div class="profile-item">
+                <div class="item-left">
+                    Birth date
+                </div>
+                <div class="item-right">
+                    {{ userInfo.dateBirth }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" [ngStyle]="{'display': modalFlag ? 'flex' : 'none' }">
+    <div class="modal-block">
+        <div class="modal-header">
+            Edit profile
+        </div>
+        <div class="modal-content">
+            <form [formGroup]="form">
+                <div class="form-group">
+                    <div class="input-title">Name</div>
+                    <input type="text" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <div class="input-title">Surname</div>
+                    <input type="text" formControlName="surname">
+                </div>
+                <div class="form-group">
+                    <div class="input-title">Birth date</div>
+                    <input type="date" formControlName="dateBirth">
+                </div>
+            </form>
+        </div>
+        <div class="modal-bottom">
+            <div (click)="this.modalFlag = !this.modalFlag" class="modal-btn modal-close-btn">
+                Close
+            </div>
+            <div (click)="this.modalFlag = !this.modalFlag; submit()" class="modal-btn modal-accept-btn">
+                Edit
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
