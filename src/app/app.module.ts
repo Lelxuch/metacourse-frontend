@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from "@angular/router";
 import { HTTP_INTERCEPTORS, HttpClientModule}  from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import { ApiInterceptor } from "./interceptors/api.interceptor";
 import { AppComponent } from './app.component';
@@ -15,7 +16,7 @@ import { HeaderComponent } from './sections/header/header.component';
   declarations: [
     AppComponent,
     SectionsComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +25,7 @@ import { HeaderComponent } from './sections/header/header.component';
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
+    AngularEditorModule
   ],
   providers: [
     {

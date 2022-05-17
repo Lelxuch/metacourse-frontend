@@ -1,0 +1,111 @@
+@import 'src/scss/variables';
+@import 'src/scss/buttons';
+
+.new-course-outer {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  margin: 100px 0;
+  width: 600px
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 30px
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  input {
+    border: 1px solid #000;
+    border-radius: $border-radius;
+    font-size: 1.25rem;
+    padding: 10px 15px;
+    outline-color: $primary;
+    width: 100%;
+  }
+
+  select {
+    border: 1px solid #000;
+    border-radius: $border-radius;
+    font-size: 1.25rem;
+    padding: 10px 15px;
+    outline-color: $primary;
+    width: 100%;
+  }
+
+  textarea {
+    border: 1px solid #000;
+    border-radius: $border-radius;
+    font-size: 1.25rem;
+    padding: 10px 15px;
+    outline-color: $primary;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+  }
+}
+
+.form-redirect {
+  text-align: right;
+
+  a {
+    z-index: 1000;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.form-bottom {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.submit-btn {
+  border: 2px solid $primary;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  transition: 0.05s linear;
+  color: #fff;
+  background: $primary;
+
+  &:hover {
+    color: #000;
+    border-color: #000;
+    background: #fff;
+    transform: scale(1.02);
+  }
+}
+
+/* Categories */
+.categories {
+  padding: 15px;
+  border: 1px solid #000;
+  border-radius: $border-radius;
+
+  select {
+    margin-top: 20px;
+  }
+}
+
+.categories-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+
+

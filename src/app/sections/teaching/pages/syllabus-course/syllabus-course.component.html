@@ -1,0 +1,25 @@
+<div class="container syllabus-outer">
+    <h1>Syllabus</h1>
+
+    <div class="syllabus-edit">
+        <a routerLink="/teaching/edit/{{this.courseId}}" class="syllabus-edit-btn">
+            Edit
+        </a>
+    </div>
+
+    <div class="syllabus-body">
+
+        <div *ngFor="let module of modulesData; let i=index" class="module">
+            <div class="module-main">
+                <h3> <span class="gray-number"> {{i+1}}. </span> {{module.title}} </h3>
+            </div>
+            <div class="module-body">
+                <div *ngFor="let lesson of modulesData[i].lessons; let j=index" class="lesson">
+                    <h5> <span class="gray-number"> {{i+1}}.{{j+1}} </span> {{module.title}} </h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

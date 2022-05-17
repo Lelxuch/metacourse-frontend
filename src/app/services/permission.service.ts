@@ -12,6 +12,6 @@ export class PermissionService {
   ) { }
 
   getDefaultSection(): string {
-    return '/courses/catalog';
+    return '/catalog';
   }
 }

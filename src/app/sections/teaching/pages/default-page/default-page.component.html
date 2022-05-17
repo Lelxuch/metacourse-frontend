@@ -1,0 +1,37 @@
+<div class="container teaching-inner">
+
+    <h1>Teaching</h1>
+
+    <div class="teaching-content">
+
+        <div class="teaching-add-course">
+            <a routerLink="new" routerLinkActive="active" class="add-course-btn">
+                Add course
+            </a>
+        </div>
+
+        <div class="teaching-body">
+
+            <div *ngFor="let course of courses" class="course-card">
+
+                <div class="card-header">
+                    <h4>{{course.title}}</h4>
+                </div>
+
+                <div class="card-body">
+                    {{course.description}}
+                </div>
+
+                <div class="card-bottom">
+                    <a routerLink="syllabus/{{course.id}}" routerLinkActive="true" class="card-button primary-btn">
+                        Open
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

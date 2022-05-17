@@ -1,0 +1,55 @@
+<div class="container syllabus-outer">
+
+    <h1>Edit course</h1>
+
+    <form [formGroup]="modulesForm">
+
+        <div class="teaching-add-module">
+            <button (click)="addModule()" class="primary-btn">Add module</button>
+        </div>
+
+        <div class="syllabus-body">
+
+            <ng-container formArrayName="modules">
+
+                <div *ngFor="let module of modules().controls; let i=index" [formGroupName]="i" class="module">
+
+                    <div class="module-main">
+                        <h3> <span class="gray-number"> {{i+1}}. </span> </h3>
+                        <input formControlName="moduleName" type="text" placeholder="Module name">
+                        <button (click)="this.removeModule(i)" class="primary-btn custom-edit-btn">Remove Module</button>
+                    </div>
+
+                    <div class="module-body">
+
+                        <ng-container formArrayName="lessons">
+
+                            <div *ngFor="let lesson of moduleLessons(i).controls; let j=index" [formGroupName]="j" class="lesson">
+                                <h5> <span class="gray-number"> {{i+1}}.{{j+1}} </span> </h5>
+                                <input formControlName="lessonName" type="text" placeholder="Lesson name">
+                                <a routerLink="{{j+1}}" class="primary-btn custom-edit-btn">Edit lesson</a>
+                                <button (click)="this.removeLesson(i, j)" class="primary-btn custom-edit-btn">Remove lesson</button>
+                            </div>
+
+                        </ng-container>
+
+                    </div>
+
+                    <div class="add-lessons">
+                        <button (click)="addLesson(i, module)" class="primary-btn">Add lesson</button>
+                    </div>
+
+                </div>
+
+            </ng-container>
+
+        </div>
+
+        <div class="form-bottom">
+            <a routerLink="/teaching" class="primary-btn">Cancel</a>
+            <button (click)="submit()" class="primary-btn">Save</button>
+        </div>
+
+    </form>
+
+</div>

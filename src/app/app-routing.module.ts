@@ -10,7 +10,7 @@ const routes: Routes = [
       {path: 'auth', loadChildren: () => import('./sections/authorization/authorization.module').then(m => m.AuthorizationModule)},
       {path: 'catalog', loadChildren: () => import('./sections/catalog/catalog.module').then(m => m.CatalogModule)},
       {path: 'education', loadChildren: () => import('./sections/education/education.module').then(m => m.EducationModule)},
-      {path: 'creation', loadChildren: () => import('./sections/creation/creation.module').then(m => m.CreationModule)},
+      {path: 'teaching', loadChildren: () => import('./sections/teaching/teaching.module').then(m => m.TeachingModule)},
       {path: 'profile', loadChildren: () => import('./sections/profile/profile.module').then(m => m.ProfileModule)},
     ]
   },

@@ -1,0 +1,45 @@
+@import 'src/scss/variables';
+
+.syllabus-outer {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.syllabus-edit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.syllabus-edit-btn {
+  background: $primary;
+  border: 2px solid $primary;
+  border-radius: $border-radius;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.syllabus-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.module-main {
+  padding: 30px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: $border-radius;
+  margin-top: 50px;
+}
+
+.gray-number {
+  color: #b3b3b3;
+  margin-right: 10px;
+}
+
+.lesson {
+  padding: 30px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: $border-radius;
+  margin-left: 30px;
+  margin-top: 10px;
+}

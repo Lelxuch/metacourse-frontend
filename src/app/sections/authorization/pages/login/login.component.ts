@@ -29,17 +29,14 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    // this.authService.login(this.form.value).subscribe(
-    //     res => {
-    //       this.router.navigateByUrl(this.permissionService.getDefaultSection())
-    //     },
-    //     err => {
-    //       console.log("The data entered is incorrect")
-    //       console.log(err)
-    //     }
-    // )
-    sessionStorage.setItem("AUTH_DATA", "AUTH_DATA");
-    sessionStorage.setItem("JWT_TOKEN", "Token");
-    this.router.navigateByUrl(this.permissionService.getDefaultSection())
+    this.authService.login(this.form.value).subscribe(
+        res => {
+          this.router.navigateByUrl(this.permissionService.getDefaultSection())
+        },
+        err => {
+          console.log("The data entered is incorrect")
+          console.log(err)
+        }
+    )
   }
 }

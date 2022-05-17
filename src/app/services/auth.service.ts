@@ -32,15 +32,14 @@ export class AuthService {
   }
 
   login(data: ILogin): Observable<any> {
-    // return this.http.post('api/signin', data).pipe(
-    //   map((response: any) => {
-    //     sessionStorage.setItem(this.AUTH_DATA, JSON.stringify(data.email));
-    //     sessionStorage.setItem(this.JWT, response.accessToken);
-    //     return this.currentUser;
-    //   })
-    // );
-    sessionStorage.setItem(this.AUTH_DATA, JSON.stringify(data.email));
-    sessionStorage.setItem(this.JWT, "Token");
+    return this.http.post('api/signin', data).pipe(
+      map((response: any) => {
+        console.log(response)
+        sessionStorage.setItem(this.AUTH_DATA, JSON.stringify(response.person));
+        sessionStorage.setItem(this.JWT, response.jwtAuthResponse.accessToken);
+        return this.currentUser;
+      })
+    );
     return this.currentUser;
   }
 

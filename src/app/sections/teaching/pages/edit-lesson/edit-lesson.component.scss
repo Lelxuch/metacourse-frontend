@@ -1,0 +1,96 @@
+@import 'src/scss/variables';
+
+/* Edit */
+.edit-lesson-outer {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+.left-menu {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: $border-radius;
+  width: 23%;
+  padding: 15px;
+  height: 100%;
+
+  a {
+    padding: 7px;
+    border-bottom: 1px solid #b3b3b3;
+
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .module-link {
+    font-size: 1.25rem;
+  }
+
+  .lesson-link {
+    margin-left: 20px;
+  }
+}
+
+.lesson-body {
+  width: 73%;
+}
+
+/* Steps */
+.steps-nav {
+  display: flex;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: $border-radius;
+  padding: 30px;
+  width: 100%;
+}
+
+.step-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  color: #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: $border-radius;
+  border: 3px solid $primary;
+  margin-right: 30px;
+  background: $primary;
+
+  &:hover {
+    color: #000;
+    border-color: #000;
+    background: #fff;
+  }
+}
+
+.steps-body {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: $border-radius;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
