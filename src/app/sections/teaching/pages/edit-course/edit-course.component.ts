@@ -97,12 +97,17 @@ export class EditCourseComponent implements OnInit, OnDestroy {
   }
 
   patchAddModule(moduleTemp: any) {
-    const module = this.formBuilder.group({
+    let module = this.formBuilder.group({
       id: [null, Validators.required],
       moduleName: ['', Validators.required],
       lessons: this.formBuilder.array([])
     });
-    module.patchValue(moduleTemp);
+    let moduleToPatch = {
+      id: moduleTemp.id,
+      moduleName: moduleTemp.title,
+      lessons: moduleTemp.lessons
+    }
+    module.patchValue(moduleToPatch);
     this.modules().push(module);
   }
 
@@ -123,7 +128,6 @@ export class EditCourseComponent implements OnInit, OnDestroy {
 
   addLesson(i: number, module: any) {
     let moduleId = this.modulesData[i].id;
-    console.log(i, moduleId);
     this.teachingService.createLesson(moduleId)
         .subscribe(res => {
               console.log(res)
@@ -137,10 +141,13 @@ export class EditCourseComponent implements OnInit, OnDestroy {
   }
 
   patchAddLesson(i: number, lessonTemp: any) {
-    const lesson = this.formBuilder.group({
+    let lesson = this.formBuilder.group({
       lessonName: ['', Validators.required]
     })
-    lesson.patchValue(lessonTemp);
+    let lessonToPatch = {
+      lessonName: lessonTemp.title
+    }
+    lesson.patchValue(lessonToPatch);
     this.moduleLessons(i).push(lesson);
   }
 
@@ -168,6 +175,27 @@ export class EditCourseComponent implements OnInit, OnDestroy {
             console.log(err);
           })
     }
+
+    for(let i = 0; i < formData.modules.length; ++i) {
+      let lessons = formData.modules[i].lessons;
+      for(let j = 0; j < lessons.length; ++j) {
+        let tempLesson = lessons[j];
+        console.log(tempLesson);
+        const lessonToSend = {
+          title: tempLesson.lessonName,
+          description: tempLesson.lessonName
+        }
+        console.log(lessonToSend);
+        this.teachingService.editLesson(this.modulesData[i].lessons[j].id, lessonToSend)
+            .subscribe(res => {
+              console.log(res);
+            },
+            err => {
+              console.log(err);
+            })
+      }
+    }
+
   }
 }
 

@@ -17,7 +17,7 @@
                     <div class="module-main">
                         <h3> <span class="gray-number"> {{i+1}}. </span> </h3>
                         <input formControlName="moduleName" type="text" placeholder="Module name">
-                        <button (click)="this.removeModule(i)" class="primary-btn custom-edit-btn">Remove Module</button>
+<!--                        <button (click)="this.removeModule(i)" class="primary-btn custom-edit-btn">Remove Module</button>-->
                     </div>
 
                     <div class="module-body">
@@ -28,7 +28,7 @@
                                 <h5> <span class="gray-number"> {{i+1}}.{{j+1}} </span> </h5>
                                 <input formControlName="lessonName" type="text" placeholder="Lesson name">
                                 <a routerLink="{{j+1}}" class="primary-btn custom-edit-btn">Edit lesson</a>
-                                <button (click)="this.removeLesson(i, j)" class="primary-btn custom-edit-btn">Remove lesson</button>
+<!--                                <button (click)="this.removeLesson(i, j)" class="primary-btn custom-edit-btn">Remove lesson</button>-->
                             </div>
 
                         </ng-container>

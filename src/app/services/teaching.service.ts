@@ -64,6 +64,10 @@ export class TeachingService {
     return this.http.post(`/api/lesson/${id}`, id);
   }
 
+  editLesson(id: number, lesson: any) {
+    return this.http.put(`/api/lesson/${id}`, lesson);
+  }
+
   /* Categories */
   getCategories() {
     return this.http.get('/api/category/list');

@@ -55,13 +55,13 @@ export class NewCourseComponent implements OnInit {
   submit() {
     let formData = this.form.getRawValue();
     const tempCourse = {
-      name: null,
+      title: null,
       description: null,
       duration: null,
       categories: []
     }
     console.log(formData.name);
-    tempCourse.name = formData.name;
+    tempCourse.title = formData.name;
     tempCourse.description = formData.description;
     tempCourse.duration = formData.duration;
     for (let i of formData.categories) {
@@ -75,7 +75,10 @@ export class NewCourseComponent implements OnInit {
         },
         err => {
           console.log("err", err);
-          // return this.router.navigateByUrl('/teaching');
+          if (err.status == 200) {
+            return this.router.navigateByUrl('/teaching');
+          }
+          return null;
         })
   }
 
