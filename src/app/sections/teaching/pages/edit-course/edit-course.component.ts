@@ -131,6 +131,7 @@ export class EditCourseComponent implements OnInit, OnDestroy {
     this.teachingService.createLesson(moduleId)
         .subscribe(res => {
               console.log(res)
+              this.getModulesReset();
             },
             err => {
               if (err.status == 200) {
@@ -157,8 +158,6 @@ export class EditCourseComponent implements OnInit, OnDestroy {
 
   submit() {
     let formData = this.modulesForm.getRawValue();
-
-    console.log(formData)
 
     for (let i = 0; i < formData.modules.length; ++i) {
       let tempModule = formData.modules[i];

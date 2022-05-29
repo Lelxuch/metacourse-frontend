@@ -8,9 +8,22 @@
 
 .intro-inner {
   display: flex;
+  align-items: center;
+}
+
+.left {
+  display: flex;
   flex-direction: column;
   width: 50%;
   line-height: 1.3;
+}
+
+.right {
+  width: 50%;
+
+  img {
+    width: 100%;
+  }
 }
 
 .intro-title {

@@ -1,20 +1,34 @@
 <div class="container edit-lesson-outer ">
 
     <div class="left-menu">
-        <a routerLink="/teaching/edit/1" routerLinkActive="true" class="module-link">Module 1</a>
-        <a routerLink="/teaching/edit/1/1" routerLinkActive="true" class="lesson-link">Lesson 1</a>
-        <a routerLink="/teaching/edit/1/2" routerLinkActive="true" class="lesson-link">Lesson 2</a>
-        <a routerLink="/teaching/edit/1/3" routerLinkActive="true" class="lesson-link">Lesson 3</a>
+
+        <div *ngFor="let module of this.courseData.modules; let i=index" class="module-block">
+            <span routerLinkActive="true" class="module-link">{{module.title}}</span>
+            <a *ngFor="let lesson of this.modulesData[i].lessons; let j=index" routerLink="/teaching/edit/{{this.courseId}}/{{module.id}}/{{j+1}}" routerLinkActive="true" class="lesson-link">{{lesson.title}}</a>
+        </div>
+
     </div>
 
     <div class="lesson-body">
 
-        <div class="steps-nav">
-            <a *ngFor="let step of steps; let i=index" routerLink="{{i+1}}" class="step-item">{{i+1}}</a>
-        </div>
-
         <div class="steps-body">
-            <angular-editor id="editor1" [config]="editorConfig"></angular-editor>
+
+            <button (click)="addText()" class="primary-btn top-btn">Add text</button>
+
+            <form [formGroup]="form">
+                <div formArrayName="texts">
+                    <div *ngFor="let text of texts().controls; let i=index" [formGroupName]="i" class="text-field">
+                        <angular-editor formControlName="text" [config]="editorConfig"></angular-editor>
+                    </div>
+                </div>
+            </form>
+
+            <div class="steps-bottom">
+                <button (click)="submit()" class="primary-btn">
+                    Save
+                </button>
+            </div>
+
         </div>
 
     </div>

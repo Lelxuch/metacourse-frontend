@@ -7,21 +7,18 @@ import { AuthService } from "../../services/auth.service";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
 
-  // flag: boolean = false;
-
-  @ViewChild('dropdown-content') dropdownContent: HTMLElement;
+  userInfo: any;
+  initials: string = ""
 
   constructor(
       private authService: AuthService
   ) { }
 
   ngOnInit(): void {
-  }
-
-  ngOnDestroy(): void {
-    // this.flag = false;
+    this.userInfo = JSON.parse(this.authService.currentUser);
+    this.initials = this.userInfo.name[0] + this.userInfo.surname[0];
   }
 
   isLogged() {
@@ -31,8 +28,4 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logout() {
     this.authService.logout();
   }
-
-  // profileClicked() {
-  //   this.flag = !this.flag;
-  // }
 }

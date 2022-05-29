@@ -27,7 +27,7 @@
                             <div *ngFor="let lesson of moduleLessons(i).controls; let j=index" [formGroupName]="j" class="lesson">
                                 <h5> <span class="gray-number"> {{i+1}}.{{j+1}} </span> </h5>
                                 <input formControlName="lessonName" type="text" placeholder="Lesson name">
-                                <a routerLink="{{j+1}}" class="primary-btn custom-edit-btn">Edit lesson</a>
+                                <a routerLink="{{module.value.id}}/{{j+1}}" class="primary-btn custom-edit-btn">Edit lesson</a>
 <!--                                <button (click)="this.removeLesson(i, j)" class="primary-btn custom-edit-btn">Remove lesson</button>-->
                             </div>
 

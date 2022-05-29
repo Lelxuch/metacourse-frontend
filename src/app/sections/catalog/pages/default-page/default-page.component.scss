@@ -13,10 +13,6 @@
 .catalog-item {
   margin-bottom: 50px;
 
-  &:last-child {
-    margin: 0;
-  }
-
   .catalog-title {
     font-size: 2.441rem;
     margin-bottom: 15px;
@@ -97,5 +93,24 @@
     &:last-child {
       margin: 0;
     }
+  }
+}
+
+/* Categories */
+.categories-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categories-item {
+  margin-right: 30px;
+  border: 1px solid #000;
+  background: #fff;
+  border-radius: $border-radius;
+  padding: 10px 15px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
   }
 }

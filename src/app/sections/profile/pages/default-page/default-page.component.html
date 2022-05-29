@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="profile-photo">
-                SN
+                {{ initials }}
             </div>
         </div>
         <div class="profile-content">
@@ -33,7 +33,7 @@
                     Birth date
                 </div>
                 <div class="item-right">
-                    {{ userInfo.dateBirth }}
+                    {{ userInfo.dateOfBirth }}
                 </div>
             </div>
         </div>
@@ -57,7 +57,15 @@
                 </div>
                 <div class="form-group">
                     <div class="input-title">Birth date</div>
-                    <input type="date" formControlName="dateBirth">
+                    <input type="date" formControlName="date">
+                </div>
+                <div class="form-group">
+                    <div class="input-title">Email</div>
+                    <input type="text" formControlName="email">
+                </div>
+                <div class="form-group">
+                    <div class="input-title">Password</div>
+                    <input type="password" formControlName="password">
                 </div>
             </form>
         </div>

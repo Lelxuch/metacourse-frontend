@@ -9,34 +9,6 @@ import { ICourse } from "../models/teaching.model";
 })
 export class TeachingService {
 
-  modules: any = [
-    {
-      moduleName: "Module 1",
-      lessons: [
-        {
-          lessonName: "Lesson 1"
-        },
-        {
-          lessonName: "Lesson 2"
-        }
-      ]
-    },
-    {
-      moduleName: "Module 2",
-      lessons: [
-        {
-          lessonName: "Lesson 1"
-        },
-        {
-          lessonName: "Lesson 2"
-        },
-        {
-          lessonName: "Lesson 3"
-        }
-      ]
-    },
-  ]
-
   /* Course */
   createCourse(course: any) {
     return this.http.post('/api/course/', course);
@@ -59,6 +31,10 @@ export class TeachingService {
     return this.http.put(`/api/module/${id}`, module)
   }
 
+  getModule(id: number) {
+    return this.http.get(`/api/module/${id}`);
+  }
+
   /* Lessons */
   createLesson(id: number) {
     return this.http.post(`/api/lesson/${id}`, id);
@@ -66,6 +42,18 @@ export class TeachingService {
 
   editLesson(id: number, lesson: any) {
     return this.http.put(`/api/lesson/${id}`, lesson);
+  }
+
+  getLesson(id: number) {
+    return this.http.get(`/api/lesson/${id}`)
+  }
+
+  createText(id: number) {
+    return this.http.post(`/api/text/${id}`, id)
+  }
+
+  putText(text: any) {
+    return this.http.put(`/api/text/${text.id}`, text)
   }
 
   /* Categories */

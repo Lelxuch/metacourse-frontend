@@ -24,8 +24,8 @@
             </a>
 
             <div class="dropdown">
-                <button *ngIf="isLogged()" class="dropdown-btn">
-                    SN
+                <button *ngIf="isLogged() && userInfo" class="dropdown-btn">
+                    {{ this.initials }}
                 </button>
                 <div class="dropdown-content">
                     <a routerLink="/profile" class="dropdown-link">Profile</a>

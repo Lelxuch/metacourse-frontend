@@ -1,0 +1,22 @@
+<div class="container edit-lesson-outer ">
+
+    <div class="left-menu">
+
+        <div *ngFor="let module of this.courseData.modules; let i=index" class="module-block">
+            <span routerLinkActive="true" class="module-link">{{module.title}}</span>
+            <a *ngFor="let lesson of this.modulesData[i].lessons; let j=index" routerLink="/catalog/{{this.courseId}}/{{module.id}}/{{j+1}}" routerLinkActive="true" class="lesson-link">{{lesson.title}}</a>
+        </div>
+
+    </div>
+
+    <div class="lesson-body">
+
+        <div class="steps-body">
+
+            <div *ngFor="let text of lessonData.texts" [innerHTML]="text.text" class="text-field"></div>
+
+        </div>
+
+    </div>
+
+</div>

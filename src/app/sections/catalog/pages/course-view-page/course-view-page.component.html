@@ -1,0 +1,27 @@
+<div class="container syllabus-outer">
+
+    <h1>View course</h1>
+
+    <div class="syllabus-body">
+
+        <div *ngFor="let module of modulesData; let i=index" class="module">
+
+            <div class="module-main">
+                <h3> <span class="gray-number"> {{i+1}}. </span> {{ module.title }} </h3>
+            </div>
+
+            <div class="module-body">
+
+                    <div *ngFor="let lesson of module.lessons; let j=index" class="lesson">
+                        <h5> <span class="gray-number"> {{i+1}}.{{j+1}} </span> {{ lesson.title }} </h5>
+                        <a routerLink="{{module.id}}/{{j+1}}" class="primary-btn custom-edit-btn">View lesson</a>
+                        <!--                                <button (click)="this.removeLesson(i, j)" class="primary-btn custom-edit-btn">Remove lesson</button>-->
+                    </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

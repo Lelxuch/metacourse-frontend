@@ -1,0 +1,95 @@
+@import 'src/scss/variables';
+@import 'src/scss/buttons';
+
+/* Input */
+input {
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  padding: 10px 15px;
+  outline-color: $primary;
+  width: 100%;
+}
+
+/* Buttons */
+.custom-edit-btn {
+  white-space: nowrap;
+  margin-left: 30px
+}
+
+/* Edit */
+.syllabus-outer {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.syllabus-edit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.syllabus-edit-btn {
+  background: $primary;
+  border: 2px solid $primary;
+  border-radius: $border-radius;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.syllabus-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.teaching-add-module {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.module-main {
+  display: flex;
+  align-content: center;
+  padding: 30px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: $border-radius;
+  margin-top: 50px;
+}
+
+.gray-number {
+  color: #b3b3b3;
+  margin-right: 10px;
+}
+
+.lesson {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 30px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: $border-radius;
+  margin-left: 30px;
+  margin-top: 10px;
+  height: 100%;
+
+  h5 {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.add-lessons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.form-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+  a {
+    margin-right: 20px;
+  }
+}
